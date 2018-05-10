@@ -1,4 +1,4 @@
-INSERT INTO burgers (burger_name)
-VALUES ("Bacon Cheeseburger"),
-("Quarter Pounder with Cheese"),
-("Turkey Burger");
+INSERT INTO burgers (iceCream_name)
+VALUES ("Chocolate"),
+("Vanilla"),
+("Strawberry");

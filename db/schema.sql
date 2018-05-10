@@ -1,11 +1,10 @@
-CREATE DATABASE burgers_db;
-USE burgers_db;
+CREATE DATABASE iceCream_db;
+USE iceCream_db;
 
-CREATE TABLE burgers (
+CREATE TABLE iceCream (
     id INTEGER NOT NULL AUTO_INCREMENT,
-    burger_name VARCHAR(300) NOT NULL,
+    iceCream_name VARCHAR(300) NOT NULL,
     devoured BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
 
-SELECT * FROM burgers;
