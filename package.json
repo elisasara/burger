@@ -2,20 +2,20 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elisasara/burger.git"
+    "url": "git+https://github.com/elisasara/iceCream.git"
   },
   "author": "Elisa Urda",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/elisasara/burger/issues"
+    "url": "https://github.com/elisasara/iceCream/issues"
   },
-  "homepage": "https://github.com/elisasara/burger#readme",
+  "homepage": "https://github.com/elisasara/iceCream#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
