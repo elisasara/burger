@@ -51,11 +51,29 @@ var orm = {
       if (err) {
         throw err
       }
-      cb(result);
+      cb(res);
     });
   },
 
-  insertOne: function (tableInput, columns, values, cb) {
-    var queryString = "INSERT INTO <tablename> (columns) VALUES (values)"
+  insertOne: function (table, columns, values, cb) {
+    var queryString = "INSERT INTO <tablename>";
+    queryString += "("
+    queryString += columns.toString()
+    queryString += ")"
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(values.length);
+    queryString += ")";
+    console.log(queryString);
+
+    connection.query(queryString, function (err, res){
+      if (err) {
+        throw err;
+      }
+      cb (res);
+    })
   },
+
+  updateOne: function (table, columns, values, cb) {
+    
+  }
 }
