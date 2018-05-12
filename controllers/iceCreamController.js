@@ -21,13 +21,13 @@ router.post("/api/icecreams", function (req, res){
     });
 });
 
-router.put("api/icecreams/:id", function (req, res){
-    var condition = req.params.id;
+router.put("/api/icecreams/:id", function (req, res){
+    var condition = "id = " + req.params.id;
 
     iceCream.updateOne({
         devoured: req.body.devoured
-    }, condition, function (data){
-        if (data.changedRows == 0) {
+    }, condition, function (result){
+        if (result.changedRows == 0) {
             return res.status(404);
         }
         else {

@@ -8,11 +8,12 @@
     {{#each iceCream}} {{#unless devoured}}
     <li>
         {{iceCream_name}}
-        <button class="changeDevoured" data-id="{{id}}" data-newDevoured="{{devoured}}">Devour It!</button>
+        <button class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
     </li>
     {{/unless}} {{/each}}
 </ul>
 
+<h2>Ice Creams Already Devoured</h2>
 <ul id="devoured">
     {{#each iceCream}} {{#if devoured}}
     <li>
