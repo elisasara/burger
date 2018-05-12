@@ -1,0 +1,28 @@
+<h1>I scream...
+    <br /> You scream...
+    <br /> We all scream for ICE CREAM!</h1>
+
+<h2>Ice Creams Ready to be Eaten</h2>
+
+<ul id="notEaten">
+    {{#each iceCream}} {{#unless devoured}}
+    <li>
+        {{iceCream_name}}
+        <button class="changeDevoured" data-id="{{id}}" data-newDevoured="{{devoured}}">Devour It!</button>
+    </li>
+    {{/unless}} {{/each}}
+</ul>
+
+<ul id="devoured">
+    {{#each iceCream}} {{#if devoured}}
+    <li>
+        {{iceCream_name}}
+    </li>
+    {{/if}} {{/each}}
+</ul>
+
+<h2>Add a New Ice Cream</h2>
+<form>
+    <input type="text" id="newIceCream">
+    <button type="submit">Add it!</button>
+</form>

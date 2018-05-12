@@ -2,7 +2,7 @@ var orm = require("../config/orm.js");
 
 var iceCream = {
     selectAll: function(cb) {
-        orm.selectAll(function(result) {
+        orm.selectAll("iceCream", function(result) {
             cb(result);
         });
     },
