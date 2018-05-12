@@ -56,10 +56,10 @@ var orm = {
   },
 
   insertOne: function (table, columns, values, cb) {
-    var queryString = "INSERT INTO <tablename>";
-    queryString += "("
-    queryString += columns.toString()
-    queryString += ")"
+    var queryString = "INSERT INTO <tablename> ";
+    queryString += "(";
+    queryString += columns.toString();
+    queryString += ")";
     queryString += "VALUES (";
     queryString += printQuestionMarks(values.length);
     queryString += ")";
@@ -73,7 +73,21 @@ var orm = {
     })
   },
 
-  updateOne: function (table, columns, values, cb) {
+  updateOne: function (table, columnValPair, condition, cb) {
+    var queryString = "UPDATE " + table;
+    queryString += " SET "
+    queryString += objToSql(columnValPair);
+    queryString += " WHERE ";
+    queryString += condition;
+    console.log(queryString);
     
+    connection.query(queryString, function (err, res){
+      if (err) {
+        throw err;
+      }
+      cb(res);
+    });
   }
-}
+};
+
+module.exports = orm;
