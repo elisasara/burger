@@ -8,8 +8,8 @@ $(document).ready(function () {
         var id = $(this).data("id");
         console.log(id);
         var newDevoured = $(this).data("newdevoured");
-        console.log(newDevoured);
-        var newDevouredState = {devoured: newDevoured};
+        console.log(!newDevoured);
+        var newDevouredState = {devoured: !newDevoured};
 
         // send the put request
         $.ajax("/api/icecreams/" + id, {
@@ -18,7 +18,7 @@ $(document).ready(function () {
         })
             .then(function() {
                 console.log("Changed devoured to ", newDevoured);
-                location.reload();
+                location.reload(true);
             });
     });
 
