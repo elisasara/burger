@@ -9,18 +9,34 @@ $(document).ready(function () {
         console.log(id);
         var newDevoured = $(this).data("newdevoured");
         console.log(!newDevoured);
-        var newDevouredState = {devoured: !newDevoured};
+        var newDevouredState = { devoured: !newDevoured };
 
         // send the put request
         $.ajax("/api/icecreams/" + id, {
             type: "PUT",
             data: newDevouredState
         })
-            .then(function() {
+            .then(function () {
                 console.log("Changed devoured to ", newDevoured);
                 location.reload(true);
             });
     });
+
+    $("submitButton").on("click", function (event) {
+        event.preventDefault();
+        var newIceCream = {
+            name: $("#newIceCream").val().trim()
+        };
+
+        $.ajax("api/icecreams", {
+            type: "POST",
+            data: newIceCream
+        })
+            .then(function () {
+                console.log(newIceCream);
+                location.reload(true);
+            })
+    })
 
 
 });
