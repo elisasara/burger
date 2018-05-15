@@ -3,6 +3,7 @@ $(document).ready(function () {
     // handle button click with information and appropriate ajax requests
     $(".changeDevoured").on("click", function (event) {
         event.preventDefault();
+        console.log("I've been clicked!");
 
         // get the id of the item clicked and the new devoured state
         var id = $(this).data("id");
