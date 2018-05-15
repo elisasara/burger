@@ -22,21 +22,21 @@ $(document).ready(function () {
             });
     });
 
-    $("submitButton").on("click", function (event) {
+    $("#createIceCream").on("submit", function (event) {
         event.preventDefault();
         var newIceCream = {
             name: $("#newIceCream").val().trim()
         };
 
-        $.ajax("api/icecreams", {
+        $.ajax("/api/icecreams", {
             type: "POST",
             data: newIceCream
         })
             .then(function () {
                 console.log(newIceCream);
                 location.reload(true);
-            })
-    })
+            });
+    });
 
 
 });

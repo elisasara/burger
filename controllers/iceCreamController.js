@@ -16,8 +16,8 @@ router.get("/", function(req, res){
 });
 
 router.post("/api/icecreams", function (req, res){
-    iceCream.insertOne([iceCream_name], [req.body.name], function (data) {
-        res.json(data);
+    iceCream.insertOne(["iceCream_name"], [req.body.name], function (data) {
+        res.json({id: data.insertId});
     });
 });
 
