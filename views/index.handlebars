@@ -1,29 +1,47 @@
-<h1>I scream...
-    <br /> You scream...
-    <br /> We all scream for ICE CREAM!</h1>
+<div class="jumbotron">
+    <div class="row">
+    <div class="col-8">
+        <h1>I scream...
+            <br /> You scream...
+            <br /> We all scream for ICE CREAM!</h1>
+    </div>
+    <div class="col-4">
+        <h1>Test</h1>
+    </div>
+    </div>
+</div>
 
-<h2>Ice Creams Ready to be Eaten</h2>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Ice Creams Ready to be Eaten</h2>
+            <ul id="notEaten">
+                {{#each iceCream}} {{#unless devoured}}
+                <li>
+                    {{iceCream_name}}
+                    <button class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
+                </li>
+                {{/unless}} {{/each}}
+            </ul>
+        </div>
 
-<ul id="notEaten">
-    {{#each iceCream}} {{#unless devoured}}
-    <li>
-        {{iceCream_name}}
-        <button class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
-    </li>
-    {{/unless}} {{/each}}
-</ul>
+        <div class="col">
+            <h2>Ice Creams Already Devoured</h2>
+            <ul id="devoured">
+                {{#each iceCream}} {{#if devoured}}
+                <li>
+                    {{iceCream_name}}
+                </li>
+                {{/if}} {{/each}}
+            </ul>
+        </div>
+    </div>
 
-<h2>Ice Creams Already Devoured</h2>
-<ul id="devoured">
-    {{#each iceCream}} {{#if devoured}}
-    <li>
-        {{iceCream_name}}
-    </li>
-    {{/if}} {{/each}}
-</ul>
-
-<h2>Add a New Ice Cream</h2>
-<form id="createIceCream">
-    <input type="text" id="newIceCream">
-    <button type="submit" id="submitButton">Add it!</button>
-</form>
+    <div class="row">
+        <h2>Add a New Ice Cream</h2>
+        <form id="createIceCream">
+            <input type="text" id="newIceCream">
+            <button type="submit" id="submitButton">Add it!</button>
+        </form>
+    </div>
+</div>
