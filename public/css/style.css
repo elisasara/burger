@@ -1,8 +1,9 @@
 .jumbotron {
-    background-color: rgb(255, 208, 0);
+    background: linear-gradient(to bottom right, rgb(238, 195, 1), rgb(236, 230, 135));
     /* position: relative */
     height: 250px;
     padding: 0;
+    color: rgb(156, 4, 118)
 }
 
 #header {
@@ -13,4 +14,21 @@ img {
     max-height: 250px;
     width: auto;
     padding-top: 30px;
+}
+
+#newForm {
+    margin-top: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+#createIceCream {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notEaten {
+    color: rgb(156, 4, 118)
 }

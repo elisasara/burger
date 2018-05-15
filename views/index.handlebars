@@ -1,47 +1,50 @@
 <div class="jumbotron">
     <div class="container">
-    <div class="row">
-    <div class="col-8" id="header">
-        <h1>I scream...
-            <br /> You scream...
-            <br /> We all scream for ICE CREAM!</h1>
-    </div>
-    <div class="col-4">
-        <img src="/Images/iceCreamCone.png" class="img-fluid">
-    </div>
-    </div>
+        <div class="row">
+            <div class="col-8" id="header">
+                <h1>I scream...
+                    <br /> You scream...
+                    <br /> We all scream for ICE CREAM!</h1>
+            </div>
+            <div class="col-4">
+                <img src="/Images/iceCreamCone.png" class="img-fluid">
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col" id="notEatenArea">
             <h2>Ice Creams Ready to be Eaten</h2>
-            <ul id="notEaten">
+            <ul class="list-group" id="notEaten">
                 {{#each iceCream}} {{#unless devoured}}
-                <li>
+                <li class="list-group-item list-group-item-warning notEaten">
                     {{iceCream_name}}
-                    <button class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
+                    <button class="btn" class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
                 </li>
                 {{/unless}} {{/each}}
             </ul>
         </div>
 
-        <div class="col">
+        <div class="col" id="eatenArea">
             <h2>Ice Creams Already Devoured</h2>
-            <ul id="devoured">
+            <ul class="list-group" id="devoured">
                 {{#each iceCream}} {{#if devoured}}
-                <li>
+                <li class="list-group-item disabled">
                     {{iceCream_name}}
                 </li>
                 {{/if}} {{/each}}
             </ul>
         </div>
     </div>
+</div>
 
+<div class="container" id="newForm">
     <div class="row">
-        <h2>Add a New Ice Cream</h2>
         <form id="createIceCream">
+            <h2>Add a New Ice Cream</h2>
+            <br />
             <input type="text" id="newIceCream">
             <button type="submit" id="submitButton">Add it!</button>
         </form>
