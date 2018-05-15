@@ -16,22 +16,28 @@
 <div class="container">
     <div class="row">
         <div class="col" id="notEatenArea">
-            <h2>Ice Creams Ready to be Eaten</h2>
+            <center><h2>Ice Creams Ready to be Eaten</h2></center>
             <ul class="list-group" id="notEaten">
                 {{#each iceCream}} {{#unless devoured}}
                 <li class="list-group-item list-group-item-warning notEaten">
-                    {{iceCream_name}}
-                    <button class="btn" class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
+                    <div class="row">
+                        <div class="col-8">
+                            {{iceCream_name}}
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm" class="changeDevoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
+                        </div>
+                    </div>
                 </li>
                 {{/unless}} {{/each}}
             </ul>
         </div>
 
         <div class="col" id="eatenArea">
-            <h2>Ice Creams Already Devoured</h2>
+            <center><h2>Ice Creams Already Devoured</h2></center>
             <ul class="list-group" id="devoured">
                 {{#each iceCream}} {{#if devoured}}
-                <li class="list-group-item disabled">
+                <li class="list-group-item devoured">
                     {{iceCream_name}}
                 </li>
                 {{/if}} {{/each}}
@@ -46,7 +52,7 @@
             <h2>Add a New Ice Cream</h2>
             <br />
             <input type="text" id="newIceCream">
-            <button type="submit" id="submitButton">Add it!</button>
+            <button type="submit" class="btn btn-lg" id="submitButton">Add it!</button>
         </form>
     </div>
 </div>
