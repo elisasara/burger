@@ -8,3 +8,4 @@ CREATE TABLE iceCream (
     PRIMARY KEY (id)
 );
 
+SELECT * FROM iceCream;

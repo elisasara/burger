@@ -2,6 +2,8 @@
 
 An app that helps you keep track of all the yummy ice cream you've been devouring along with all those you still have to eat!
 
+![ice cream](/public/images/iceCream.png)
+
 This app utilizes:
 * Heroku
 * MySQL

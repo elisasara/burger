@@ -1,4 +1,4 @@
-INSERT INTO burgers (iceCream_name)
+INSERT INTO iceCream (iceCream_name)
 VALUES ("Chocolate"),
 ("Vanilla"),
 ("Strawberry");
